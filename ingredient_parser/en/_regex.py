@@ -25,6 +25,11 @@ units_list = FLATTENED_UNITS_LIST | {"x"} | LENGTH_UNITS
 QUANTITY_UNITS_PATTERN = re.compile(rf"(\d)\-?({'|'.join(units_list)})(?![a-wyzA-WYZ])")
 UNITS_QUANTITY_PATTERN = re.compile(rf"({'|'.join(units_list)})(\d)")
 UNITS_HYPHEN_QUANTITY_PATTERN = re.compile(rf"({'|'.join(units_list)})\-(\d)")
+
+# regex patterns for finding inch/foot measurements
+UNITS_APOSTROPHE_PATTERN = re.compile(r"(\d)\"")
+UNITS_COLON_PATTERN = re.compile(r"(\d)\'")
+
 STRING_QUANTITY_HYPHEN_PATTERN = re.compile(
     rf"""
     \b({"|".join(STRING_NUMBERS.keys())})\b  # Capture string number

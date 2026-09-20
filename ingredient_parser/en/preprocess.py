@@ -28,6 +28,8 @@ from ._regex import (
     QUANTITY_UNITS_PATTERN,
     QUANTITY_X_PATTERN,
     STRING_QUANTITY_HYPHEN_PATTERN,
+    UNITS_APOSTROPHE_PATTERN,
+    UNITS_COLON_PATTERN,
     UNITS_HYPHEN_QUANTITY_PATTERN,
     UNITS_QUANTITY_PATTERN,
     UPPERCASE_PATTERN,
@@ -411,6 +413,8 @@ class PreProcessor:
         sentence = QUANTITY_UNITS_PATTERN.sub(r"\1 \2", sentence)
         sentence = UNITS_QUANTITY_PATTERN.sub(r"\1 \2", sentence)
         sentence = UNITS_HYPHEN_QUANTITY_PATTERN.sub(r"\1 - \2", sentence)
+        sentence = UNITS_APOSTROPHE_PATTERN.sub(r"\1 inch", sentence)
+        sentence = UNITS_COLON_PATTERN.sub(r"\1 foot", sentence)
         return STRING_QUANTITY_HYPHEN_PATTERN.sub(r"\1 \2", sentence)
 
     def _remove_unit_trailing_period(self, sentence: str) -> str:

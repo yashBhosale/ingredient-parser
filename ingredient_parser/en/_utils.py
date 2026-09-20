@@ -385,6 +385,7 @@ def convert_to_pint_unit(
 
     # If unit not empty string and found in Unit Registry,
     # return pint.Unit object for unit
+    print(unit)
     if unit != "" and unit in UREG:
         return UREG(unit).units
 

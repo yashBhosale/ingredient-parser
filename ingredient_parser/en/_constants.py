@@ -223,6 +223,11 @@ def pluralise_known_unit(s: str) -> str:
 
 # Words that indicate ingredient size
 SIZES = [
+    "#2",
+    "#2.5",
+    "#10",
+    "#300",
+    "#303",
     "big",
     "bite-size",
     "bite-sized",
